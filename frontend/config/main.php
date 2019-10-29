@@ -42,6 +42,16 @@ return [
             'rules' => [
             ],
         ],
+         'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+            'clients' => [
+                'facebook' => [
+                    'class' => 'yii\authclient\clients\Facebook',
+                    'clientId' => 'facebook_client_id',
+                    'clientSecret' => 'facebook_client_secret',
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];
