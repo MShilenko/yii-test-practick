@@ -10,15 +10,18 @@ use yii\helpers\HtmlPurifier;
 <h3><?php echo Html::encode($user->username); ?></h3>
 <p><?php echo HtmlPurifier::process($user->about); ?></p>
 <hr>
-<a href="<?php echo Url::to(['/user/profile/subscribe', 'id' => $user->getId()]); ?>" class="btn btn-info">Subscribe</a>
-<a href="<?php echo Url::to(['/user/profile/unsubscribe', 'id' => $user->getId()]); ?>" class="btn btn-info">Unsubscribe</a>
+<?php if($currentUser && $currentUser->id != $user->id){ ?>
+	<?php if(!$currentUser->isFollowing($user)){ ?>
+		<a href="<?php echo Url::to(['/user/profile/subscribe', 'id' => $user->getId()]); ?>" class="btn btn-info">Subscribe</a>
+	<?php } ?>
+		<a href="<?php echo Url::to(['/user/profile/unsubscribe', 'id' => $user->getId()]); ?>" class="btn btn-info">Unsubscribe</a>
+		<hr>
+<?php } ?>
 
-<hr>
-
-<?php if ($currentUser): ?>
+<?php if ($currentUser && $mutualSubscriptions = $currentUser->getMutualSubscriptionsTo($user)): ?>
     <h5>Friends, who are also following <?php echo Html::encode($user->username); ?>: </h5>
     <div class="row">
-        <?php foreach ($currentUser->getMutualSubscriptionsTo($user) as $item): ?>
+        <?php foreach ($mutualSubscriptions as $item): ?>
             <div class="col-md-12">
                 <a href="<?php echo Url::to(['/user/profile/view', 'nickname' => ($item['nickname']) ? $item['nickname'] : $item['id']]); ?>">
                     <?php echo Html::encode($item['username']); ?>

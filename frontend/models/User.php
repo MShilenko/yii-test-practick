@@ -346,4 +346,12 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasMany(Post::className(), ['user_id' => 'id'])->orderBy($order)->all();
     }
     
+    public function isFollowing(User $user)
+    {
+       /* @var $redis Connection */
+        $redis = Yii::$app->redis;
+        
+		return (bool) $redis->sismember("user:{$this->getId()}:subscriptions", $user->getId());
+    }
+    
 }

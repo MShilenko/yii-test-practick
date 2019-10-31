@@ -36,7 +36,9 @@ class ProfileController extends Controller
     
      public function actionSubscribe($id)
     {
-        if(Yii::$app->user->isGuest){
+		$currentUser = Yii::$app->user->identity;
+		
+        if(Yii::$app->user->isGuest || $currentUser->id == $id){
 			return $this->redirect(['/user/default/login']);
 		}
 		
