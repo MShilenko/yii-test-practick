@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
 $this->title = 'My Yii Application';
 ?>
@@ -25,6 +26,13 @@ $this->title = 'My Yii Application';
 				<hr>
             </div>
             <?php } ?>
+            
+            <div class="col-xs-12"><?php
+				echo LinkPager::widget([
+					'pagination' => $pages,
+				]);
+            ?></div>
+            
         </div>
 
     </div>

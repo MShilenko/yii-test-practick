@@ -41,6 +41,7 @@ return [
             'showScriptName' => false,
             'rules' => [
 				'profile/<nickname:\w+>' => 'user/profile/view',
+				'post/<id:\d+>' => 'post/default/view',
             ],
         ],
          'redis' => [
@@ -49,11 +50,17 @@ return [
             'port' => 6379,
             'database' => 0,
         ],
+         'storage' => [
+            'class' => 'frontend\components\Storage',
+        ],
     ],
     'modules' => [
         'user' => [
             'class' => 'frontend\modules\user\Module',
         ],
+        'post' => [
+            'class' => 'frontend\modules\post\Module',
+        ]
     ],
     'params' => $params,
 ];

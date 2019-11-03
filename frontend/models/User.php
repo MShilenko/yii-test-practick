@@ -29,8 +29,8 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
-
-    const DEFAULT_IMAGE = '/img/profile_default_image.jpg';
+    
+    const DEFAULT_IMAGE = '/uploads/img/def_profile.png';
   
     /**
      * @inheritdoc
