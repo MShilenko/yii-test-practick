@@ -44,7 +44,7 @@ class ProfileController extends Controller
     {
 		$currentUser = Yii::$app->user->identity;
 		
-        if(Yii::$app->user->isGuest || $currentUser->id == $id){
+        if(Yii::$app->user->isGuest){
 			return $this->redirect(['/user/default/login']);
 		}
 		

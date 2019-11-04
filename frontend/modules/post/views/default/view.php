@@ -46,5 +46,3 @@ use yii\web\JqueryAsset;
 <?php $this->registerJsFile('@web/js/likes.js', [
     'depends' => JqueryAsset::className(),
 ]);
-
-?>
