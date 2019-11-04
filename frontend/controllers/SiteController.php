@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use Yii;
 use yii\web\Controller;
 use frontend\models\User;
 use yii\data\Pagination;
@@ -29,12 +30,19 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-		$query = User::find();
-		$countQuery = clone $query;
-		$pages = new Pagination(['totalCount' => $countQuery->count()]);
-		$users = $query->offset($pages->offset)->limit($pages->limit)->all();		
+		if(Yii::$app->user->isGuest){
+			return $this->redirect(['/user/default/login']);
+		}
+		
+		$currentUser = Yii::$app->user->identity;
+		$limit = Yii::$app->params['feedPostLimit'];
+		$limit_on_page = Yii::$app->params['feedPostLimitOnPage'];
+		$feedItems = $currentUser->getFeed($limit);
+		
+		$pages = new Pagination(['totalCount' => $limit_on_page]);
         return $this->render('index',[
-			'users' => $users,
+			'feedItems' => $feedItems,
+			'currentUser' => $currentUser,
 			'pages' => $pages,
         ]);
     }
