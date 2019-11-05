@@ -96,7 +96,7 @@ FontAwesomeAsset::register($this);
                 <div class="back-to-top-page">
                     <a class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
                 </div>
-                <p class="text">Images | <?=date('Y')?></p>
+                <p class="text"><a href="<?=Url::to(['/site/about'])?>">Images | <?=date('Y')?></a></p>
             </div>
         </footer>
 

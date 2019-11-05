@@ -1,16 +1,8 @@
 <?php
-
 /* @var $this yii\web\View */
-
-use yii\helpers\Html;
-
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'About Images';
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>This is the About page. You may modify the following file to customize its content:</p>
-
-    <code><?= __FILE__ ?></code>
+<div class="page-posts no-padding">      
+    <h1>About Images <?php //echo Yii::t('about', 'About Images project'); ?></h1>
+    <p>Todo: write text about the project!</p>
 </div>
