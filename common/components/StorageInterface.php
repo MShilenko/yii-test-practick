@@ -6,7 +6,7 @@
  * 
  */
 
-namespace frontend\components;
+namespace common\components;
 
 use yii\web\UploadedFile; 
 
