@@ -26,7 +26,11 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=-1
+current_page=0
+FILE_NAME_0=438;PHP;0;EUTF-8;1;1;1;%2Fvar%2Fwww%2Fhtml%2Fyii-test-practick.ru%2Fyii2-app-advanced%2Ffrontend%2Fconfig%2Fmain.php;0;4
+FILE_NAME_1=1984;PHP;0;EUTF-8;1;1;1;%2Fvar%2Fwww%2Fhtml%2Fyii-test-practick.ru%2Fyii2-app-advanced%2Ffrontend%2Fviews%2Flayouts%2Fmain.php;0;4
+FILE_NAME_2=287;PHP;0;EUTF-8;1;1;1;%2Fvar%2Fwww%2Fhtml%2Fyii-test-practick.ru%2Fyii2-app-advanced%2Ffrontend%2Fmessages%2Fru%2Fmenu.php;0;4
+FILE_NAME_3=91;PHP;0;EUTF-8;1;1;1;%2Fvar%2Fwww%2Fhtml%2Fyii-test-practick.ru%2Fyii2-app-advanced%2Ffrontend%2Fcontrollers%2FSiteController.php;0;4
 
 [VTE]
 last_dir=/var/www/html/yii-test-practick.ru/yii2-app-advanced
@@ -37,4 +41,4 @@ header_patterns=*.h;*.H;*.hpp;*.hxx;*.h++;*.hh;
 ignored_dirs_patterns=.*;CVS;
 ignored_file_patterns=*.o;*.obj;*.a;*.lib;*.so;*.dll;*.lo;*.la;*.class;*.jar;*.pyc;*.mo;*.gmo;
 generate_tag_prefs=0
-external_dirs=
+external_dirs=/var/www/html/yii-test-practick.ru/yii2-app-advanced/frontend/messages/ru/menu.php;
